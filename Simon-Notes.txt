@@ -1,3 +1,5 @@
 This file is just for my notes and should not be merged with Master
 
 As I pushed this to my Branch, it doesn't appear in the Master.
+
+mmm, that's disappointing...you don't seem to be able to select which commits you merge.
