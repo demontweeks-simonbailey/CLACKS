@@ -10,4 +10,4 @@ Oh, there is, isn't there!
 
 Just added a branch "Simon"
 
-See the new branch and approved merge to Master
+Seen the new branch and approved merge to Master
