@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+<script type='text/javascript'>
+/* ### This is just for fun :) ### */
+var thisStep = 1;
+function clacksColors()
+	{
+	var thisMessage = ["C",">","L",">","A",">","C",">","K",">","S"];
+	var oStr = "<p>";
+	for(i=0;i<thisMessage.length;i++)
+		{
+		if(thisStep == i)
+			{oStr += "<font color='#FF0000'>"+thisMessage[i]+"</font>";}
+		else
+			{oStr += thisMessage[i];}
+		}
+	oStr += "<p>";
+	document.getElementById('header').innerHTML = oStr;
+	if(thisStep == 10)
+		{
+		thisStep = 0;
+		}
+	else
+		{
+		thisStep++;
+		}
+	setTimeout(clacksColors, 500);
+	}
+</script>
+
+<script type='text/javascript'>
+function yourFunction_1()
+	{
+	/* ### This is the main method of processing your arguments in C>L>A>C>K>S ### */
+
+    /* ### Here we define the types of arguments we want to pass in. ### */
+
+    /* ### The number of types acts as a count of how many arguments the function is expecting. ### */
+
+    /* ### You can call your TYPES whatever you like, as you will know what it is your expecting, so can process it accordingly in your custom validation functions. ### */
+
+    /* ### e.g. TYPE: DRAGON. VALUE: YES/NO...TYPE: BATH_LEVEL. VALUE: 50...and so on.... ### */
+
+    var types = ["NUMBER","STRING","STRING","STRING","STRING","NUMBER","NUMBER","STRING","CAKE","CAKE","CakE"];
+
+    /* ### We call our CLACKS_APPLY function here, sending the types and arguments arrays ### */
+    var CLACKS_CONFIRM = CLACKS_APPLY(types,arguments);
+
+
+    /* ### Here we deal with the return from CLACKS_APPLY (via the CLACKS_CONFIRM variable) ### */
+
+    /* ### If CLACKS_APPLY has returned true, then all is well in our functions world and we can continue to execute the function ### */
+
+   	/* ### THE REST OF YOUR FUNCTION CODE WOULD GO HERE ### */
+
+   	/* ### But for the sake of this example, we will just output to the screen ### */
+
+    /* ### *********************** START OF SCREEN DUMP *********************** ### */
+    if(CLACKS_CONFIRM == true)
+    	{
+    	var rtnMessage = "<table width='100%' style='border-radius:25px;' cellpadding='10' cellspacing='0'><tbody><tr><th colspan='3' style='border: 2px solid #FF0000;border-radius: 25px 25px 0px 0px'>All arguments are present and all match their types</th></tr>";
+    	rtnMessage += "<tr><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Index</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Type</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Argument</td></tr>";
+    	if(arguments.length > types.length)
+    		{
+    		var twoFlower = arguments.length;
+    		}
+    	else
+    		{
+    		var twoFlower = types.length;
+    		}
+
+    	for(i=0;i<twoFlower;i++)
+    		{
+    		if(i == twoFlower-1)
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 25px;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + types[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 25px 0px;font-weight:bold;'>" + arguments[i] + "</td></tr>";
+    			}
+    		else
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + types[i] + "</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + arguments[i] + "</td></tr>";
+    			}
+    		}
+    	return rtnMessage + "<tr><td colspan='3'><center><strong>yourFunction_1()</strong></td></tr></tbody></table>";
+    	}
+    else
+    	{
+    	var rtnMessage = "<table width='100%' style='border-radius:25px;' cellpadding='10' cellspacing='0'><tbody><tr><th colspan='3' style='border: 2px solid #FF0000;border-radius: 25px 25px 0px 0px'>"+CLACKS_CONFIRM+"</th></tr>";
+
+    	rtnMessage += "<tr><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Index</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Type</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Argument</td></tr>";
+
+    	if(arguments.length > types.length)
+    		{
+    		var twoFlower = arguments.length;
+    		}
+    	else
+    		{
+    		var twoFlower = types.length;
+    		}
+
+    	for(i=0;i<twoFlower;i++)
+    		{
+    		if(i == twoFlower-1)
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 25px;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + types[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 25px 0px;font-weight:bold;'>" + arguments[i] + "</td></tr>";
+    			}
+    		else
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + types[i] + "</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + arguments[i] + "</td></tr>";
+    			}
+    		}
+    	return rtnMessage + "<tr><td colspan='3'><center><strong>yourFunction_1()</strong></td></tr></tbody></table>";
+    	}
+    	/* ### *********************** END OF SCREEN DUMP *********************** ### */
+	}
+</script>
+
+<script type='text/javascript'>
+/* ### This is an alternative method of processing your arguments in C>L>A>C>K>S ### */
+function yourFunction_2()
+	{
+	var AT = [];
+	var AV = [];
+	for(i=0;i<arguments.length;i++)
+		{
+		var tV = arguments[i].split(":");
+		AT.push(tV[0]);
+		AV.push(tV[1]);
+		}
+	var CLACKS_CONFIRM = CLACKS_APPLY(AT,AV);
+
+    /* ### Here we deal with the return from CLACKS_APPLY (via the CLACKS_CONFIRM variable) ### */
+
+    /* ### If CLACKS_APPLY has returned true, then all is well in our world and we can continue to execute the function ### */
+
+   	/* ### THE REST OF YOUR FUNCTION CODE WOULD GO HERE ### */
+
+
+
+   	/* ### But for the sake of this example, we will just output to the screen ### */
+
+    /* ### *********************** START OF SCREEN DUMP *********************** ### */
+    if(CLACKS_CONFIRM == true)
+    	{
+    	var rtnMessage = "<table width='100%' style='border-radius:25px;' cellpadding='10' cellspacing='0'><tbody><tr><th colspan='3' style='border: 2px solid #FF0000;border-radius: 25px 25px 0px 0px'>All arguments are present and all match their types</th></tr>";
+    	rtnMessage += "<tr><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Index</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Type</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Argument</td></tr>";
+    	if(AV.length > AT.length)
+    		{
+    		var twoFlower = AV.length;
+    		}
+    	else
+    		{
+    		var twoFlower = AT.length;
+    		}
+
+    	for(i=0;i<twoFlower;i++)
+    		{
+    		if(i == twoFlower-1)
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 25px;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 25px 0px;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		else
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		}
+    	return rtnMessage + "<tr><td colspan='3'><center><strong>yourFunction_2()</strong></td></tr></tbody></table>";
+    	}
+    else
+    	{
+    	var rtnMessage = "<table width='100%' style='border-radius:25px;' cellpadding='10' cellspacing='0'><tbody><tr><th colspan='3' style='border: 2px solid #FF0000;border-radius: 25px 25px 0px 0px'>"+CLACKS_CONFIRM+"</th></tr>";
+
+    	rtnMessage += "<tr><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Index</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Type</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Argument</td></tr>";
+
+    	if(AV.length > AT.length)
+    		{
+    		var twoFlower = AV.length;
+    		}
+    	else
+    		{
+    		var twoFlower = AT.length;
+    		}
+
+    	for(i=0;i<twoFlower;i++)
+    		{
+    		if(i == twoFlower-1)
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 25px;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 25px 0px;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		else
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		}
+    	return rtnMessage + "<tr><td colspan='3'><center><strong>yourFunction_2()</strong></td></tr></tbody></table>";
+    	}
+    	/* ### *********************** END OF SCREEN DUMP *********************** ### */
+
+	}
+</script>
+
+
+<script type='text/javascript'>
+/* ### This is an alternative method of processing your arguments in C>L>A>C>K>S ### */
+function yourFunction_3()
+	{
+	var AT = [];
+	var AV = [];
+	myArguments = arguments[0].split(",");
+	for(i=0;i<myArguments.length;i++)
+		{
+		var tV = myArguments[i].split(":");
+		AT.push(tV[0]);
+		AV.push(tV[1]);
+		}
+	var CLACKS_CONFIRM = CLACKS_APPLY(AT,AV);
+
+    /* ### Here we deal with the return from CLACKS_APPLY (via the CLACKS_CONFIRM variable) ### */
+
+    /* ### If CLACKS_APPLY has returned true, then all is well in our world and we can continue to execute the function ### */
+
+   	/* ### THE REST OF YOUR FUNCTION CODE WOULD GO HERE ### */
+
+
+
+   	/* ### But for the sake of this example, we will just output to the screen ### */
+
+    /* ### *********************** START OF SCREEN DUMP *********************** ### */
+    if(CLACKS_CONFIRM == true)
+    	{
+    	var rtnMessage = "<table width='100%' style='border-radius:25px;' cellpadding='10' cellspacing='0'><tbody><tr><th colspan='3' style='border: 2px solid #FF0000;border-radius: 25px 25px 0px 0px'>All arguments are present and all match their types</th></tr>";
+    	rtnMessage += "<tr><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Index</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Type</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Argument</td></tr>";
+    	if(AV.length > AT.length)
+    		{
+    		var twoFlower = AV.length;
+    		}
+    	else
+    		{
+    		var twoFlower = AT.length;
+    		}
+
+    	for(i=0;i<twoFlower;i++)
+    		{
+    		if(i == twoFlower-1)
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 25px;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 25px 0px;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		else
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		}
+    	return rtnMessage + "<tr><td colspan='3'><center><strong>yourFunction_3()</strong></td></tr></tbody></table>";
+    	}
+    else
+    	{
+    	var rtnMessage = "<table width='100%' style='border-radius:25px;' cellpadding='10' cellspacing='0'><tbody><tr><th colspan='3' style='border: 2px solid #FF0000;border-radius: 25px 25px 0px 0px'>"+CLACKS_CONFIRM+"</th></tr>";
+
+    	rtnMessage += "<tr><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Index</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Type</td><td width='33%' style='border: 2px solid #FF0000;font-weight:bold;'>Argument</td></tr>";
+
+    	if(AV.length > AT.length)
+    		{
+    		var twoFlower = AV.length;
+    		}
+    	else
+    		{
+    		var twoFlower = AT.length;
+    		}
+
+    	for(i=0;i<twoFlower;i++)
+    		{
+    		if(i == twoFlower-1)
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 25px;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 25px 0px;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		else
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		}
+    	return rtnMessage + "<tr><td colspan='3'><center><strong>yourFunction_3()</strong></td></tr></tbody></table>";
+    	}
+    	/* ### *********************** END OF SCREEN DUMP *********************** ### */
+
+	}
+</script>
+
+<script type='text/javascript'>
+/* ### This is the function that evaluates the arguments/types and sends them out to your custom validation functions for checking ### */
+function CLACKS_APPLY(arg_types,arg_values)
+	{
+	/* ### Set up our KARMA ### */
+	var KARMA = true;
+
+	/* ### Check to see if there are as many arguments as types, if not, throw and error ### */
+	if(arguments[0].length !== arguments[1].length)
+		{
+	   	if(arguments[0].length<arguments[1].length)
+	   		{
+	    	return "CLACKS ERROR: There are more arguments than types.";
+	    	}
+	   	else
+	    	{
+	    	return "CLACKS ERROR: There are more types than arguments";
+	    	}
+    	return;
+    	}
+
+		/* ### Loop through the arguments and call custom functions to validate the arguments ### */
+		for(var gnu=0;gnu<arguments[0].length;gnu++)
+			{
+
+			/* ### So now we add some conditional checks so that we can process the arguments accordingly ### */
+
+			/* ### This one will check to see if the argument is a number or empty ### */
+			if(arguments[0][gnu].toUpperCase() === "NUMBER")
+				{
+				var KARMA = CLACKS_NUMBER(arguments[1][gnu]);
+				if(KARMA === false)
+					{
+					return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+					}
+				}
+			/* ### This one will check to see if the argument is text, not a number or empty ### */
+			if(arguments[0][gnu].toUpperCase() === "STRING")
+				{
+				var KARMA = CLACKS_TEXT(arguments[1][gnu]);
+				if(KARMA === false)
+					{
+					return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+					}
+				}
+			/* ### This one checks to see if it is a cake or empty... ### */
+			if(arguments[0][gnu].toUpperCase() === "CAKE")
+				{
+				var KARMA = CLACKS_CAKE(arguments[1][gnu]);
+				if(KARMA === false)
+					{
+					return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+					}
+				}
+			/* ### This one checks to see if it is a car or empty... ### */
+			if(arguments[0][gnu].toUpperCase() === "CAR")
+				{
+				var KARMA = CLACKS_CAR(arguments[1][gnu]);
+				if(KARMA === false)
+					{
+					return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+					}
+				}
+			/* ### This one checks to see if it is a Jackson Five or empty... ### */
+			if(arguments[0][gnu].toUpperCase() === "JACKSONFIVE")
+				{
+				var KARMA = CLACKS_JACKSONS(arguments[1][gnu]);
+				if(KARMA === false)
+					{
+					return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+					}
+				}
+			}
+		/* ### return the state of KARMA (true/false) to the function that called CLACKS_APPLY ### */
+		return KARMA;
+		}
+</script>
+
+<script type='text/javascript'>
+/* ### This is a custom validation function to check if what we send it is a number or empty and respond accordingly ### */
+function CLACKS_NUMBER(CLACK)
+	{
+	if(CLACK == "")
+		{
+		return false;
+		}
+	if(Number.isNaN(Number(CLACK)))
+		{
+		return false;
+		}
+	else
+		{
+		return true;
+		}
+	}
+
+/* ### This is a custom validation function to check if what we send it is text, not a number or empty and respond accordingly ### */
+function CLACKS_TEXT(CLACK)
+	{
+	if(CLACK === "")
+		{
+		return false;
+		}
+	else
+		{
+		isText = CLACKS_NUMBER(CLACK);
+			if(isText === false)
+				{
+				return true;
+				}
+			else
+				{
+				return false;
+				}
+		}
+	}
+
+/* ### This is a custom validation function to check if what we send it is a cake, not a number(as we know it should be text) or empty and respond accordingly ### */
+function CLACKS_CAKE(CLACK)
+	{
+	if(CLACK === "")
+		{
+		return false;
+		}
+	else
+		{
+		isText = CLACKS_NUMBER(CLACK);
+			if(isText === false)
+				{
+				if(CLACK.toUpperCase() === "CHOCOLATE" || CLACK.toUpperCase() === "CARROT" || CLACK.toUpperCase() === "SPONGE" || CLACK.toUpperCase() === "VICTORIA SPONGE")
+					{
+					return true;
+					}
+				else
+					{
+					return false;
+					}
+				}
+			else
+				{
+				return false;
+				}
+		}
+	}
+
+/* ### This is a custom validation function to check if what we send it is a car, not a number(as we know it should be text) or empty and respond accordingly ### */
+function CLACKS_CAR(CLACK)
+	{
+	if(CLACK === "")
+		{
+		return false;
+		}
+	else
+		{
+		isText = CLACKS_NUMBER(CLACK);
+			if(isText === false)
+				{
+				if(CLACK.toUpperCase() === "AUDI" || CLACK.toUpperCase() === "PORSCHE" || CLACK.toUpperCase() === "BMW" || CLACK.toUpperCase() === "LAND ROVER")
+					{
+					return true;
+					}
+				else
+					{
+					return false;
+					}
+				}
+			else
+				{
+				return false;
+				}
+		}
+	}
+
+/* ### This is a custom validation function to check if what we send it is a member, or was a member of the Jackson Five, not a number(as we know it should be text) or empty and respond accordingly ### */
+function CLACKS_JACKSONS(CLACK)
+	{
+	var JacksonFive = ["MICHAEL","JACKIE","JERMAINE","TITO","MARLON","RANDY"];
+
+	if(CLACK === "")
+		{
+		return false;
+		}
+	else
+		{
+		isText = CLACKS_NUMBER(CLACK);
+			if(isText === false)
+				{
+				for(j=0;j<JacksonFive.length;j++)
+					{
+					if(CLACK.toUpperCase() == JacksonFive[j])
+						{
+						console.log(CLACK+":"+JacksonFive[j]);
+						return true;
+						}
+					else
+						{
+						if(j==JacksonFive.length-1)
+							{
+							return false;
+							}
+						}
+					}
+				}
+			else
+				{
+				return false;
+				}
+		}
+	}
+</script>
+</head>
+<body onload='clacksColors();' style='background-color:#808080'>
+<center>
+<div id='header' style='font-family:arial;font-size: 2em; font-weight: bold'></div>
+<div id="output_1" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
+<div id="output_2A" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
+<div id="output_2B" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
+<div id="output_2C" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
+<div id="output_3" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
+</center>
+<script type='text/javascript'>
+// ### Here we Command the yourFunction_1 function and pass it some arguments, then return the fruits of our labours to the screen.
+document.getElementById("output_1").innerHTML = yourFunction_1("2.5","4th","World","three","Hello","49.97","1001","Testing","sponge","Carrot","Victoria Sponge");
+
+// ### Here is another way we can COMMAND our function in C>L>A>C>K>S.
+// ### We can pass the TYPES and ARGUMENTS in as paired arguments and then using a slightly different function - yourFunction2(), process the arguments.
+document.getElementById("output_2A").innerHTML = yourFunction_2("NUMBER:476.5","STRING:476th","STRING:467 and a bit","STRING:more 467","STRING:and more 467","NUMBER:46.7","NUMBER:467467","STRING:Many 467","CAR:Land rover","CAR:Porsche","CAKE:Victoria Sponge");
+
+
+// ### Here we are calling yourFunction_2 but using an array to hold our VALUES, with the TYPES being hardcoded into the COMMAND
+var items_A = [];
+items_A[0] = 481;
+items_A[1] = "482nd";
+items_A[2] = 483;
+items_A[3] = "Chocolate";
+document.getElementById("output_2B").innerHTML = yourFunction_2("NUMBER:"+items_A[0],"STRING:"+items_A[1],"NUMBER:"+items_A[2],"CAKE:"+items_A[3]);
+
+// ### Here we are calling yourFunction_2 but using an array to hold our TYPES and VALUES
+var items_B = [];
+items_B[0] = {Type:"NUMBER:",Value:489};
+items_B[1] = {Type:"STRING:",Value:"490th"};
+items_B[2] = {Type:"NUMBER:",Value: 491};
+items_B[3] = {Type:"CAKE:",Value:"Carrot"};
+document.getElementById("output_2C").innerHTML = yourFunction_2(items_B[0]['Type']+items_B[0]['Value'],items_B[1]['Type']+items_B[1]['Value'],items_B[2]['Type']+items_B[2]['Value'],items_B[3]['Type']+items_B[3]['Value']);
+
+
+// ### Here we are calling yourFunction_3, using an array to hold our TYPES and VALUES
+var items_C = [];
+items_C[0] = {Type:"NUMBER:",Value:406};
+items_C[1] = {Type:"STRING:",Value:"407th"};
+items_C[2] = {Type:"NUMBER:",Value: 408};
+items_C[3] = {Type:"CAKE:",Value:"Victoria Sponge"};
+items_C[4] = {Type:"JACKSONFIVE:",Value:"Michael"};
+items_C[5] = {Type:"JACKSONFIVE:",Value:"TITO"};
+items_C[6] = {Type:"JACKSONFIVE:",Value:"JANET"};
+var myArguments = "";
+for(i=0;i<items_C.length;i++)
+	{
+	if(i==items_C.length-1)
+		{
+		myArguments += items_C[i]['Type']+items_C[i]['Value'];
+		}
+	else
+		{
+		myArguments += items_C[i]['Type']+items_C[i]['Value']+",";
+		}
+
+	}
+document.getElementById("output_3").innerHTML = yourFunction_3(myArguments);
+
+// ### You get the idea...there are many ways you can construct your arguments (Values, Types/Values, etc, etc).
+
+</script>
+
+</body>
+</html>

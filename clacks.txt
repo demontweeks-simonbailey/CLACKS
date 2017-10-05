@@ -1,0 +1,119 @@
+C>L>A>C>K>S
+
+Command>Launch>Apply>Confirm>Karma>Serve
+
+A confirmation methodology for function handling ideals.
+
+C>L>A>C>K>S is a code function methodology that ensures that the code you build is robust and if you operate your coding practices in the C>L>A>C>K>S method, ensures that errors are handled
+and process control is maintained.
+
+The overview is:
+
+Command
+	==>
+		Send a command to a function
+			==>
+				Any action that invokes a function. It could be, for example, a javascript or PHP function call to make something happen
+
+Launch
+	==>
+		Launch the function
+			==>
+				Launch the function. This is in inherent by virtue of the COMMAND call
+
+Apply
+	==>
+		Apply the inputs to the functon
+			==>
+				Apply any inputs into the function. Functions often fail due to not applying input variables correctly to the function
+
+Confirm
+	==>
+		Confirm the Inputs to the function
+			==>
+				Confirm that all input variables that are required have been received, error handle if not.
+
+Karma
+	==>
+		Handle Positive or negative outcome (var Karma [Boolean])
+			==>
+				process the function and obtain the outcome. Karma = True if outcome of the function is positive, Karma = false if outcome of the function is negative
+
+Send
+	==>
+		Send the results of the function
+			==>
+				Return the results to the command
+					use a simple condition "KARMA" to evaluate if the function has succeded and if TRUE, then return the values of the function or continue processing
+					==> KARMA = TRUE/FALSE
+					==> YOUR FUNCTION RESULTS
+					
+Simple HTML/JAVASCRIPT Example:
+
+<html>
+ * Each of these buttons is a COMMAND that invokes the function "calcTotal", passing two variables 1)The value 2) The action.
+
+<button id='this_button' value='1' onclick='calcTotal(1,"ADD");'>Click to Add to total</button>
+<button id='this_button' value='1' onclick='calcTotal(1,"TAKE");'>Click to Deduct from total</button>
+
+// Lets set a variable to hold the total
+var Total = 0;
+
+* We now Launch the function and apply the variables to the function
+function calcTotal(theNumber,whatAction)
+	{
+	
+	// set up an array and define your requirements
+	var MY_ARGUMENTS = ({theNumber: "NUMBER", whatAction: "TAKE,ADD"});
+	
+	
+	// Now push the input variables into the array
+	var CLACKS_ARRAY = [];
+    	var gnu;
+    	for(gnu = 0; gnu < arguments.length; gnu++)
+    		{CLACKS_ARRAY.push (arguments[gnu]);}
+	
+	// This function will return TRUE or FALSE
+	var CLACKS_CONFIRM = CLACKS_APPLY(CLACKS_ARRAY)
+	
+	//if we have a FALSE value returned, we must bail out of the function and return
+	
+		
+	// Ok, so now we have established the validity of the input variables and if everything is ok, we can proceed
+	
+	}
+
+function CLACKS_APPLY(CLACKS_ARGUMENTS)
+	{
+	var KARMA = false;
+	//we can now process the arguments array
+	// Now we must confirm the variables have been received and are correct
+	for(cc=0;cc<CLACK_ARGUMENTS.length;cc++)
+		{
+		now lets loop through the arguments and see what we find and process is accordingly
+		
+		}
+	
+	if(value === "" || action === "")
+		{	
+		// We have a problem so we must bail out of the function and inform that all is not well
+		return ("There is an error with the input variables: Missing one or more");		
+		}
+	else
+		{
+		// Now we check to see if the input variables are of the correct tyoe for the function
+		// This will vary depending on your functions requirements
+		var isNaN = function(value) {return Number.isNaN(Number(value));}
+		if(isNaN === true)
+			{
+			// We have an issue an must return
+			return ("The value entered is not a number");
+			}
+		// Now we need to make sure that the "action" variable is correct 
+		if(action !== "Add" || action !== "Take")
+			{
+			// We have a problem and must return
+			return ("The action method is not correct. Acceptable: Add/Take");
+			}
+		}
+	}
