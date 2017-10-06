@@ -347,17 +347,35 @@ function CLACKS_APPLY(arg_types,arg_values)
 				var KARMA = CLACKS_CAR(arguments[1][gnu]);
 				if(KARMA === false)
 					{
-					return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+					if(KARMA === false)
+						{
+						return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+						}
+					else
+						{
+						return KARMA;
+						}
 					}
 				}
 			/* ### This one checks to see if it is a Jackson Five or empty... ### */
 			if(arguments[0][gnu].toUpperCase() === "JACKSONFIVE")
 				{
 				var KARMA = CLACKS_JACKSONS(arguments[1][gnu]);
-				if(KARMA === false)
+				if(KARMA !== true)
 					{
-					return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+					if(KARMA === false)
+						{
+						return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+						}
+					else
+						{
+						return KARMA;
+						}
 					}
+				//else
+				//	{
+				//	return KARMA;
+				//	}
 				}
 			}
 		/* ### return the state of KARMA (true/false) to the function that called CLACKS_APPLY ### */
@@ -450,7 +468,7 @@ function CLACKS_CAR(CLACK)
 					}
 				else
 					{
-					return false;
+					return CLACK + " is NOT a car!";
 					}
 				}
 			else
@@ -485,7 +503,7 @@ function CLACKS_JACKSONS(CLACK)
 						{
 						if(j==JacksonFive.length-1)
 							{
-							return false;
+							return "ERROR: "+CLACK+" was NOT or is NOT a member of the Jackson Five"; false;
 							}
 						}
 					}
@@ -541,10 +559,10 @@ items_C[2] = {Type:"NUMBER:",Value: 408};
 items_C[3] = {Type:"CAKE:",Value:"Victoria Sponge"};
 items_C[4] = {Type:"JACKSONFIVE:",Value:"Michael"};
 items_C[5] = {Type:"JACKSONFIVE:",Value:"TITO"};
-items_C[6] = {Type:"JACKSONFIVE:",Value:"JANET"};
-items_C[7] = {Type:"JACKSONFIVE:",Value:"Dave"};
-items_C[8] = {Type:"CAKE:",Value:"Carrot"};
-items_C[9] = {Type:"CAR:",Value:"BMW"};
+items_C[6] = {Type:"CAR:",Value:"Chester"};
+//items_C[7] = {Type:"JACKSONFIVE:",Value:"Dave"};
+//items_C[8] = {Type:"CAKE:",Value:"Carrot"};
+//items_C[9] = {Type:"CAR:",Value:"BMW"};
 var myArguments = "";
 for(i=0;i<items_C.length;i++)
 	{
