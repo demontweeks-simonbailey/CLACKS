@@ -288,6 +288,94 @@ function yourFunction_3()
 </script>
 
 <script type='text/javascript'>
+/* ### This is an alternative method of processing your arguments in C>L>A>C>K>S ### */
+function yourFunction_5()
+	{
+	console.log(arguments);
+	var AT = [];
+	var AP = [];
+	var AV = [];
+	//myArguments = arguments[0].split(",");
+	for(i=0;i<arguments.length;i++)
+		{
+		var tV = arguments[i].split(":");
+		AT.push(tV[0]);
+		AP.push(tV[1]);
+		AV.push(tV[2]);
+		}
+	var CLACKS_CONFIRM = CLACKS_APPLY_2(AT,AP,AV);
+
+    /* ### Here we deal with the return from CLACKS_APPLY (via the CLACKS_CONFIRM variable) ### */
+
+    /* ### If CLACKS_APPLY has returned true, then all is well in our world and we can continue to execute the function ### */
+
+   	/* ### THE REST OF YOUR FUNCTION CODE WOULD GO HERE ### */
+
+
+
+   	/* ### But for the sake of this example, we will just output to the screen ### */
+
+    /* ### *********************** START OF SCREEN DUMP *********************** ### */
+    if(CLACKS_CONFIRM == true)
+    	{
+    	var rtnMessage = "<table width='100%' style='border-radius:25px;' cellpadding='10' cellspacing='0'><tbody><tr><th colspan='4' style='border: 2px solid #FF0000;border-radius: 25px 25px 0px 0px'>All arguments are present and all match their types</th></tr>";
+    	rtnMessage += "<tr><td width='25%' style='border: 2px solid #FF0000;font-weight:bold;'>Index</td><td width='25%' style='border: 2px solid #FF0000;font-weight:bold;'>Type</td><td width='25%' style='border: 2px solid #FF0000;font-weight:bold;'>Length</td><td width='25%' style='border: 2px solid #FF0000;font-weight:bold;'>Argument</td></tr>";
+    	if(AV.length > AT.length)
+    		{
+    		var twoFlower = AV.length;
+    		}
+    	else
+    		{
+    		var twoFlower = AT.length;
+    		}
+
+    	for(i=0;i<twoFlower;i++)
+    		{
+    		if(i == twoFlower-1)
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 25px;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 0px;font-weight:bold;'>" + AP[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 25px 0px;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		else
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 0px;font-weight:bold;'>" + AP[i] + "</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		}
+    	return rtnMessage + "<tr><td colspan='4'><center><strong>yourFunction_5()</strong></td></tr></tbody></table>";
+    	}
+    else
+    	{
+    	var rtnMessage = "<table width='100%' style='border-radius:25px;' cellpadding='10' cellspacing='0'><tbody><tr><th colspan='4' style='border: 2px solid #FF0000;border-radius: 25px 25px 0px 0px'>"+CLACKS_CONFIRM+"</th></tr>";
+
+    	rtnMessage += "<tr><td width='25%' style='border: 2px solid #FF0000;font-weight:bold;'>Index</td><td width='25%' style='border: 2px solid #FF0000;font-weight:bold;'>Type</td><td width='25%' style='border: 2px solid #FF0000;font-weight:bold;'>Length</td><td width='25%' style='border: 2px solid #FF0000;font-weight:bold;'>Argument</td></tr>";
+
+    	if(AV.length > AT.length)
+    		{
+    		var twoFlower = AV.length;
+    		}
+    	else
+    		{
+    		var twoFlower = AT.length;
+    		}
+
+    	for(i=0;i<twoFlower;i++)
+    		{
+    		if(i == twoFlower-1)
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 25px;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 0px;font-weight:bold;'>" + AP[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 25px 0px;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		else
+    			{
+    			rtnMessage += "<tr><td style='border: 2px solid #FF0000;font-weight:bold;'>"+i+"</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AT[i] + "</td><td style='border: 2px solid #FF0000;border-radius: 0px 0px 0px 0px;font-weight:bold;'>" + AP[i] + "</td><td style='border: 2px solid #FF0000;font-weight:bold;'>" + AV[i] + "</td></tr>";
+    			}
+    		}
+    	return rtnMessage + "<tr><td colspan='4'><center><strong>yourFunction_5()</strong></td></tr></tbody></table>";
+    	}
+    	/* ### *********************** END OF SCREEN DUMP *********************** ### */
+
+	}
+</script>
+
+<script type='text/javascript'>
 /* ### This is the function that evaluates the arguments/types and sends them out to your custom validation functions for checking ### */
 function CLACKS_APPLY(arg_types,arg_values)
 	{
@@ -373,6 +461,81 @@ function CLACKS_APPLY(arg_types,arg_values)
 						}
 					}
 				}
+			}
+		/* ### return the state of KARMA (true/false) to the function that called CLACKS_APPLY ### */
+		return KARMA;
+		}
+</script>
+
+<script type='text/javascript'>
+/* ### This is the function that evaluates the arguments/patterns/types and sends them out to your custom validation functions for checking ### */
+function CLACKS_APPLY_2(argTypes,argPattern,argValues)
+	{
+	/* ### Set up our KARMA ### */
+	var KARMA = true;
+
+	console.log(argTypes+":"+argPattern+":"+argValues);
+
+	/* ### Check to see if there are as many arguments as types, if not, throw and error ### */
+	if(arguments[0].length !== arguments[1].length)
+		{
+	   	if(arguments[0].length<arguments[2].length)
+	   		{
+	    	return "CLACKS ERROR: There are more arguments than types.";
+	    	}
+	   	else
+	    	{
+	    	return "CLACKS ERROR: There are more types than arguments";
+	    	}
+    	return;
+    	}
+
+		/* ### Loop through the arguments and call custom functions to validate the arguments ### */
+		for(var gnu=0;gnu<arguments[0].length;gnu++)
+			{
+
+			/* ### So now we add some conditional checks so that we can process the arguments accordingly ### */
+
+			/* ### This one will check to see if the type is a number and contains the correct number of digits ### */
+			if(arguments[0][gnu].toUpperCase() === "NUMBER_LENGTH")
+				{
+				/* ### Lets check the length before we send it off for verifying */
+				if(arguments[2][gnu].length !== parseInt(arguments[1][gnu]))
+					{
+					return "ERROR: Argument ("+gnu+") - Value entered does not contain "+arguments[1][gnu]+" digits";
+					}
+				else
+					{
+					var KARMA = CLACKS_NUMBER(arguments[2][gnu]);
+					}
+				if(KARMA === false)
+					{
+					return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+					}
+				}
+
+			/* ### This one will check to see if the type is a number and contains the correct number of digits within the range ### */
+			if(arguments[0][gnu].toUpperCase() === "NUMBER_RANGE")
+				{
+				/* ### We need to split argument[1] so that we can get the range */
+
+				var thisRange = arguments[1][gnu].split("-");
+
+				/* ### Lets check the length before we send it off for verifying */
+				if(arguments[2][gnu].length < parseInt(thisRange[0]) || arguments[2][gnu].length > parseInt(thisRange[1]))
+					{
+					return "ERROR: Argument ("+gnu+") - Value entered does not contain "+arguments[1][gnu]+" digits ("+arguments[2][gnu].length+")";
+					}
+				else
+					{
+					var KARMA = CLACKS_NUMBER(arguments[2][gnu]);
+					}
+				if(KARMA === false)
+					{
+					return "ERROR: Argument ("+gnu+") does NOT match its type, is invalid or is empty";
+					}
+				}
+
 			}
 		/* ### return the state of KARMA (true/false) to the function that called CLACKS_APPLY ### */
 		return KARMA;
@@ -520,6 +683,9 @@ function CLACKS_JACKSONS(CLACK)
 <div id="output_2B" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
 <div id="output_2C" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
 <div id="output_3" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
+<div id="output_4" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
+<div id="output_5A" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
+<div id="output_5B" style='border:2px solid #FF0000;border-radius: 25px;width:30%;padding:10px;font-family:arial;margin-bottom:15px;background-color:#F4F4F4'></div>
 </center>
 <script type='text/javascript'>
 // ### Here we Command the yourFunction_1 function and pass it some arguments, then return the fruits of our labours to the screen.
@@ -574,10 +740,35 @@ for(i=0;i<items_C.length;i++)
 	}
 document.getElementById("output_3").innerHTML = yourFunction_3(myArguments);
 
+
+// ### Only allow emails from .co.uk address
+var varType = "EMAIL";
+var varPattern = "co.uk"
+var varValue = "myemail@myprovider.co.uk";
+//document.getElementById("output_4").innerHTML = yourFunction_4(varType+":"+varPattern+":"+varValue,"EMAIL:.COM:clack@claks.com");
+
+// ### Validate that we are sending a number and that it is 5 digits in length
+varType_1 = "NUMBER_LENGTH";
+varRange_1 = "5";
+varValue_1 = "56789";
+
+varType_2 = "NUMBER_LENGTH";
+varRange_2 = "4";
+varValue_2 = "999";
+
+document.getElementById("output_5A").innerHTML = yourFunction_5(varType_1+":"+varRange_1+":"+varValue_1,varType_2+":"+varRange_2+":"+varValue_2);
+
+// ### Validate that we are sending a number and that it between 6 and 10 digits in length
+varType = "NUMBER_RANGE";
+varRange = "6-10";
+varValue = "1234567890";
+document.getElementById("output_5B").innerHTML = yourFunction_5(varType+":"+varRange+":"+varValue);
+
+
 // ### You get the idea...there are many ways you can construct your arguments (Values, Types/Values, etc, etc).
 
 // ### Might be interested in seeing if I can collate the failures, rather than just bailing at the first one.
-// ### At the moment, it only shows, in thei example, that JANET is the fail point...not that Dave is also a fail point
+// ### At the moment, it only shows, in this example, that JANET is the fail point...not that Dave is also a fail point
 // ### In fairness, it doesnt really matter as we should really mop up in a sequential manner anyway
 
 </script>
